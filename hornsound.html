@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<head>
+    <title>Addons Hornsound - Dyy Shafiqa Production</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+   <header>
+
+    <div id="loader">
+    <div class="loader-box">
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <p id="progressText">0%</p>
+    </div>
+</div>
+
+
+<script>
+document.body.classList.add("loading");
+
+let progress = 0;
+const progressBar = document.getElementById("progressBar");
+const progressText = document.getElementById("progressText");
+const loader = document.getElementById("loader");
+
+const interval = setInterval(() => {
+    progress++;
+
+    progressBar.style.width = progress + "%";
+    progressText.textContent = progress + "%";
+
+    if (progress >= 100) {
+        clearInterval(interval);
+
+        setTimeout(() => {
+            loader.classList.add("hide");
+
+            setTimeout(() => {
+                loader.style.display = "none";
+                document.body.classList.remove("loading");
+            }, 500);
+
+        }, 300);
+    }
+}, 10);
+</script>
+
+  <img src="img/dsp.png" width="100x" height="65px" alt="Foto">
+  <div class="navigasi">Dyy Shafiqa Production</div>
+
+  <div class="header-right">
+    
+    <!-- Darkmode -->
+    <button id="darkModeToggle" class="dark-toggle">🌙</button>
+
+    <!-- Hamburger -->
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
+
+    <!-- Overlay -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Sidebar -->
+  <nav class="sidebar" id="sidebar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="locomotive.html">Locomotive</a></li>
+      <li><a href="consist.html">Consist</a></li>
+      <li><a href="rute.html">Rute</a></li>
+      <li><a href="object.html">Object</a></li>
+      <li><a href="spline.html">Spline</a></li>
+      <li><a href="interior.html">Interior</a></li>
+      <li><a href="hornsound.html">Hornsound</a></li>
+      <li><a href="enginesound.html">Enginesound</a></li>
+      <li><a href="enginespec.html">Enginespec</a></li>
+      <li><a href="depencies.html">Dependencies</a></li>
+    </ul>
+  </nav>
+
+</header>
+
+<!-- dark mode -->
+<script>
+const toggleBtn = document.getElementById("darkModeToggle");
+
+// Cek localStorage (biar ingat mode terakhir)
+if (localStorage.getItem("darkMode") === "enabled") {
+  document.body.classList.add("dark");
+  toggleBtn.textContent = "☀";
+}
+
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+
+  if (document.body.classList.contains("dark")) {
+    localStorage.setItem("darkMode", "enabled");
+    toggleBtn.textContent = "☀";
+  } else {
+    localStorage.setItem("darkMode", "disabled");
+    toggleBtn.textContent = "🌙";
+  }
+});
+</script>
+
+<!-- overlay -->
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const sidebar = document.getElementById("sidebar");
+const overlay = document.getElementById("overlay");
+
+let timeout;
+
+menuToggle.addEventListener("mouseenter", () => {
+  clearTimeout(timeout);
+  sidebar.classList.add("active");
+  overlay.classList.add("active");
+});
+
+sidebar.addEventListener("mouseleave", () => {
+  timeout = setTimeout(() => {
+    sidebar.classList.remove("active");
+    overlay.classList.remove("active");
+  }, 200); // delay 200ms
+});
+</script>
+
+    <section>
+
+        <video autoplay muted loop playsinline id="bgVideo">
+  <source src="img/comingsooon.mp4" type="video/mp4">
+</video>
+      
+    </section>
+    
+    </body>
+    </html>

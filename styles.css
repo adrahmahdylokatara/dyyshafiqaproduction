@@ -1,0 +1,356 @@
+/* ================= RESET ================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  background: #f4f6f9;
+  color: #222;
+  transition: 0.3s ease;
+}
+
+/* ================= HEADER ================= */
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  height: 70px;
+  background: #022955;
+  color: white;
+}
+
+header img {
+  object-fit: contain;
+}
+
+.navigasi {
+  font-size: 20px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+/* ================= HAMBURGER ================= */
+.menu-toggle {
+  width: 28px;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  display: block;
+  height: 3px;
+  background: white;
+  margin: 5px 0;
+  transition: 0.3s ease;
+}
+
+/* ================= OVERLAY ================= */
+.overlay {
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  height: calc(100% - 70px);
+  background: rgba(0,0,0,0.4);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+}
+
+.overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ================= SIDEBAR ================= */
+.sidebar {
+  position: fixed;
+  top: 70px;
+  right: -250px;
+  width: 250px;
+  height: calc(100% - 70px);
+  background: #1f1f1f;
+  padding-top: 40px;
+  transition: 0.3s ease;
+  box-shadow: -4px 0 15px rgba(0,0,0,0.3);
+}
+
+.sidebar.active {
+  right: 0;
+}
+
+.sidebar ul {
+  list-style: none;
+}
+
+.sidebar ul li {
+  padding: 15px 25px;
+}
+
+.sidebar ul li a {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  transition: 0.2s ease;
+}
+
+.sidebar ul li a:hover {
+  color: #00ff99;
+  padding-left: 8px;
+}
+
+/* ================= CLEAN LIST STYLE ================= */
+
+section ul {
+  list-style: none;
+  padding: 0;
+  margin: 25px auto 45px auto;
+  max-width: 750px;
+}
+
+section ul li {
+  background: #ffffff;
+  margin-bottom: 12px;
+  padding: 14px 20px;
+  border-radius: 12px;
+  font-size: 15px;
+  line-height: 1.6;
+  text-align: center;
+  transition: 0.25s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.06);
+}
+
+/* Hover effect */
+section ul li:hover {
+  transform: scale(1.02);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.12);
+}
+
+/* ================= DARK MODE ================= */
+
+body.dark section ul li {
+  background: #1e1e1e;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+
+/* ================= DARK MODE ================= */
+
+body.dark section ul li {
+  background: #1e1e1e;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+body.dark section ul li::before,
+body.dark section ul li::after {
+  color: #00c3ff;
+}
+
+
+/* ================= DARK MODE ================= */
+
+body.dark section ul li {
+  background: #1e1e1e;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+body.dark section ul li::before,
+body.dark section ul li::after {
+  color: #00c3ff;
+}
+
+
+/* ================= DARK MODE ================= */
+
+body.dark section ul li {
+  background: #1e1e1e;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+body.dark section ul li::before,
+body.dark section ul li::after {
+  color: #00c3ff;
+}
+
+
+/* ================= CONTENT ================= */
+section {
+  max-width: 850px;
+  margin: 80px auto;
+  padding: 0 20px;
+  text-align: center;
+}
+
+h3 {
+  font-size: 36px;
+  margin-bottom: 25px;
+  color: #022955;
+}
+
+h4 {
+  font-size: 27px;
+  margin-bottom: 25px;
+  color: #a03b00;
+}
+
+h2 {
+  font-size: 30px;
+  margin-bottom: 25px;
+  color: #0c6147 ;
+}
+
+p {
+  font-size: 17px;
+  line-height: 1.8;
+  margin-bottom: 30px;
+}
+
+/* ================= BUTTON ================= */
+button {
+  background: linear-gradient(135deg, #0052ff, #00a0fd);
+  color: white;
+  padding: 12px 28px;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: 0.3s ease;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+button:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}
+
+/* Biar tombol sejajar & rapi */
+section a {
+  margin: 10px;
+  display: inline-block;
+}
+
+/* ================= DARK MODE ================= */
+body.dark {
+  background: #121212;
+  color: white;
+}
+
+body.dark header {
+  background: #022955;
+}
+
+body.dark h3 {
+  color: #00c3ff;
+}
+
+body.dark h4 {
+  color: #fcf802;
+}
+
+body.dark h2 {
+  color: #eb1b1b;
+}
+
+body.dark .sidebar {
+  background: #2c2c2c;
+}
+
+body.dark .menu-toggle span {
+  background: white;
+}
+
+body.dark button {
+  background: linear-gradient(135deg, #1000a3, #210057);
+}
+
+body.dark section ul li {
+  background: #1e1e1e;
+  color: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
+}
+
+body.dark section ul li::before {
+  color: #00c3ff;
+}
+
+/* ================= VIDEO BACKGROUND ================= */
+
+#bgVideo {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: -1;
+}
+
+/* Supaya konten tetap terbaca */
+body {
+  position: relative;
+  z-index: 1;
+}
+
+/* ================== ANIMASI LOADING ==================== */
+
+/* Lock scroll saat loading */
+body.loading {
+    overflow: hidden;
+}
+
+/* Fullscreen loader */
+#loader {
+    position: fixed;
+    inset: 0; /* lebih aman dari width/height */
+    background: #0a0f1f;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 999999;
+}
+
+/* Box */
+.loader-box {
+    text-align: center;
+    color: white;
+    width: 300px;
+}
+
+/* Progress container */
+.progress-container {
+    width: 100%;
+    height: 8px;
+    background: #1e1e1e;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 15px;
+}
+
+/* Progress bar */
+.progress-bar {
+    height: 100%;
+    width: 0%;
+    background: linear-gradient(90deg, #00c6ff, #0072ff);
+    transition: width 0.2s ease;
+}
+
+/* Fade out effect */
+#loader.hide {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+

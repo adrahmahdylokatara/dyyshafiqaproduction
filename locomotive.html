@@ -1,0 +1,444 @@
+<!DOCTYPE html>
+<head>
+    <title>Addons Locomotive - Dyy Shafiqa Production</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+<header>
+
+    <div id="loader">
+    <div class="loader-box">
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <p id="progressText">0%</p>
+    </div>
+</div>
+
+
+<script>
+document.body.classList.add("loading");
+
+let progress = 0;
+const progressBar = document.getElementById("progressBar");
+const progressText = document.getElementById("progressText");
+const loader = document.getElementById("loader");
+
+const interval = setInterval(() => {
+    progress++;
+
+    progressBar.style.width = progress + "%";
+    progressText.textContent = progress + "%";
+
+    if (progress >= 100) {
+        clearInterval(interval);
+
+        setTimeout(() => {
+            loader.classList.add("hide");
+
+            setTimeout(() => {
+                loader.style.display = "none";
+                document.body.classList.remove("loading");
+            }, 500);
+
+        }, 300);
+    }
+}, 10);
+</script>
+
+  <img src="img/dsp.png" width="100x" height="65px" alt="Foto">
+  <div class="navigasi">Dyy Shafiqa Production</div>
+
+  <div class="header-right">
+    
+    <!-- Darkmode -->
+    <button id="darkModeToggle" class="dark-toggle">🌙</button>
+
+    <!-- Hamburger -->
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
+
+    <!-- Overlay -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Sidebar -->
+  <nav class="sidebar" id="sidebar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="locomotive.html">Locomotive</a></li>
+      <li><a href="consist.html">Consist</a></li>
+      <li><a href="rute.html">Rute</a></li>
+      <li><a href="object.html">Object</a></li>
+      <li><a href="spline.html">Spline</a></li>
+      <li><a href="interior.html">Interior</a></li>
+      <li><a href="hornsound.html">Hornsound</a></li>
+      <li><a href="enginesound.html">Enginesound</a></li>
+      <li><a href="enginespec.html">Enginespec</a></li>
+      <li><a href="depencies.html">Dependencies</a></li>
+    </ul>
+  </nav>
+
+</header>
+
+<!-- dark mode -->
+<script>
+const toggleBtn = document.getElementById("darkModeToggle");
+
+// Cek localStorage (biar ingat mode terakhir)
+if (localStorage.getItem("darkMode") === "enabled") {
+  document.body.classList.add("dark");
+  toggleBtn.textContent = "☀";
+}
+
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+
+  if (document.body.classList.contains("dark")) {
+    localStorage.setItem("darkMode", "enabled");
+    toggleBtn.textContent = "☀";
+  } else {
+    localStorage.setItem("darkMode", "disabled");
+    toggleBtn.textContent = "🌙";
+  }
+});
+</script>
+
+<!-- overlay -->
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const sidebar = document.getElementById("sidebar");
+const overlay = document.getElementById("overlay");
+
+let timeout;
+
+menuToggle.addEventListener("mouseenter", () => {
+  clearTimeout(timeout);
+  sidebar.classList.add("active");
+  overlay.classList.add("active");
+});
+
+sidebar.addEventListener("mouseleave", () => {
+  timeout = setTimeout(() => {
+    sidebar.classList.remove("active");
+    overlay.classList.remove("active");
+  }, 200); // delay 200ms
+});
+</script>
+
+    <section>
+
+        <h3>Locomotive</h3>
+
+        </section>
+        
+        <!-- CC 204 DRR EDIT DSP -->
+         <section>
+        <h2>DRR x DSP - CC 204 Batch 1 Series</h2>
+
+        <img src="img/c4drrxdsp.png" alt="CC204 JIRC x DSP" width="100%">
+
+        <p><b>MOHON UNTUK TIDAK REUPLOAD ADDON INI!</b></p>
+
+        <h4>Berikut fitur yang ada di addon ini</h4>
+        <h4>Surveyor</h4>
+        <ul>
+            <li>Ganti Skin Lokomotif</li>
+            <li>Ganti Skin Underframe</li>
+            <li>Ganti Skin Cowcatcher</li>
+            <li>Ganti Skin Bogie</li>
+            <li>Ubah Kondisi Awal Mesin Menjadi Menyala/Mati</li>
+            <li>Ubah Kondisi Awal Pengatur Motor Menjadi Isolate/Run</li>
+        </ul>
+        <h4>Drive Mode</h4>
+        <ul>
+            <li>Hidup/Mati Mesin Lokomotif</li>
+            <li>Isolate/Run Pengatur Motor Lokomotif</li>
+            <li>Hidup/Mati Radio</li>
+            <li>Hidup/Mati Lampu Kabin</li>
+            <li>Hidup/Mati Lampu Semboyan 20</li>
+            <li>Pasang/Lepas Eblek Semboyan 21</li>
+            <li>Buka/Tutup Tutup Semboyan 26/27</li>
+            <li>Dinas/Libur Masinis + Stoker</li>
+            <li>Dinas/Libur Lokride</li>
+            <li>Dinas/Langsir Juru Langsir</li>
+            <li>Dinas/Langsir Teknisi</li>
+            <li>ShortHood/LongHood Kursi</li>
+            <li>Pasang/Lepas Bendera</li>
+            <li>Pasang/Lepas Multiple Unit Divre</li>
+            <li>Pasang/Lepas Medha</li>
+            <li>Pasang/Lepas Toolbox</li>
+            <li>Pasang/Lepas Stopblok</li>
+            <li>Pasang/Lepas Papan Stopblok</li>
+            <li>Pasang/Lepas Wiper Tengah</li>
+            <li>Pasang/Lepas Locotrack</li>
+            <li>Pasang/Lepas Teralis</li>
+            <li>Pasang/Lepas Spion</li>
+            <li>Pasang/Lepas Papan Jadwal</li>
+        </ul>
+        <h4>Lainnya</h4>
+        <ul>
+             <li>Tuas kabin lokomotif bisa bergerak</li>
+             <li>Efek sway/guncangan pada kabin</li>
+             <li>Efek suara copler terpasang dan terkunci</li>
+             <li>Efek suara decitan rem pada saat menarik tuas rem</li>
+             <li>Rantai otomatis tersambung jika terhubung dengan rangkaian dan otomatis terlepas jika tidak terhubung dengan rangkaian</li>
+        </ul>
+        <h4>Catatan</h4>
+        <ul>
+            <li>Ada bug pada fitur tuas yang kadang efek suara tuasnya ilang, cara atasinnya keluar kamera kabin lalu masuk lagi ke dalam kabin.</li>
+            <li>Ada bug enginesound yang putus-putus suaranya. Saat ini masih belum ketemu cara atasin bug ini.</li>
+        </ul>
+        <br>
+        <a href="https://drive.google.com/file/d/10tcfGI9FkNgp2BYNfsjeVdWznJ2aPho7/view?usp=sharing">
+            <button>Download - Non PBR</button>
+        </a>
+        <br>
+        <a href="https://drive.google.com/file/d/1Zz_8Br6aVV9AKqzQXg8caVPB2zQ8Z57H/view?usp=drive_link">
+            <button>Download - PBR</button>
+        </a>
+        <br>
+        <a href="https://drive.google.com/file/d/1SHoaJjTJPSdw16FcBZY8HgiPhknDcILg/view?usp=sharing">
+            <button>Download - Dep Ketinggalan PBR</button>
+        </a>
+        <br>
+        </section>
+        
+        <!-- CC 201 JIRC EDIT DSP -->
+         <section>
+        <h2>JIRC x DSP - CC 201 All In One</h2>
+
+        <img src="img/c1jircxdsp.png" alt="CC201 JIRC x DSP" width="100%">
+
+        <p><b>MOHON UNTUK TIDAK REUPLOAD ADDON INI!</b></p>
+
+        <h4>Berikut fitur yang ada di addon ini</h4>
+        <h4>Surveyor</h4>
+        <ul>
+            <li>Ganti Skin Lokomotif</li>
+            <li>Ganti Skin Bogie</li>
+            <li>Ganti Plat Nomor/Depo Lokomotif</li>
+            <li>Ganti Jenis Sekop</li>
+            <li>Ganti Jenis Corong + Antena</li>
+            <li>Ganti Frame Jendela</li>
+            <li>Ganti Warna Deckplate</li>
+            <li>Pasang/Lepas Air Conditioner Termorail</li>
+            <li>Pasang/Lepas Kotak Multiple Unit Daop</li>
+            <li>Pasang/Lepas Teralis</li>
+            <li>Pasang/Lepas Hanger</li>
+        </ul>
+        <h4>Drive Mode</h4>
+        <ul>
+            <li>Hidup/Mati Mesin Lokomotif</li>
+            <li>Ubah Posisi Kamera Kabin</li>
+            <li>Buka/Tutup Pintu</li>
+            <li>Buka/Tutup Jendela</li>
+            <li>Hidup/Mati Wiper</li>
+            <li>Hidup/Mati Radio</li>
+            <li>Hidup/Mati Lampu Kabin</li>
+            <li>Hidup/Mati Lampu Kabut</li>
+            <li>Hidup/Mati Lampu Semboyan 20</li>
+            <li>Pasang/Lepas Eblek Semboyan 21</li>
+            <li>Dinas/Libur Masinis + Stoker</li>
+            <li>Dinas/Libur Lokride</li>
+            <li>Dinas/Langsir Juru Langsir</li>
+            <li>Dinas/Langsir Teknisi</li>
+            <li>ShortHood/LongHood Kursi</li>
+            <li>Pasang/Lepas Bendera</li>
+            <li>Pasang/Lepas Multiple Unit Divre</li>
+            <li>Pasang/Lepas CCTV</li>
+            <li>Pasang/Lepas Toolbox</li>
+            <li>Pasang/Lepas Papan Stopblok</li>
+            <li>Pasang/Lepas Wiper Tengah</li>
+            <li>Pasang/Lepas Karet Hidung</li>
+            <li>Pasang/Lepas Teralis Semboyan Divre</li>
+            <li>Pasang/Lepas Spion</li>
+            <li>Pasang/Lepas Papan Jadwal</li>
+        </ul>
+        <h4>Lainnya</h4>
+        <ul>
+             <li>Tuas kabin lokomotif bisa bergerak</li>
+             <li>Efek suara decitan rem pada saat menarik tuas rem</li>
+             <li>Rantai otomatis tersambung jika terhubung dengan rangkaian dan otomatis terlepas jika tidak terhubung dengan rangkaian</li>
+        </ul>
+        <h4>Catatan</h4>
+        <ul>
+            <li>Ada bug pada fitur tuas yang kadang efek suara tuasnya ilang, cara atasinnya keluar kamera kabin lalu masuk lagi ke dalam kabin.</li>
+            <li>Ada bug enginesound yang putus-putus suaranya. Saat ini masih belum ketemu cara atasin bug ini.</li>
+        </ul>
+        <br>
+        <a href="https://drive.google.com/file/d/1xBoZFImFU09jM7VGQL_uVtVTYBP-NZdJ/view">
+            <button>Download</button>
+        </a>
+        <br>
+        </section>
+        
+        <!-- CC 201 DRR X DSP -->
+        <section>
+        <h2>DRR x DSP - CC 201 KPT Series</h2>
+
+        <img src="img/c1drrxdsp.png" alt="CC201 DRR x DSP" width="100%">
+
+        <p><b>MOHON UNTUK TIDAK REUPLOAD ADDON INI!</b></p>
+
+        <h4>Berikut fitur yang ada di addon ini</h4>
+        <h4>Surveyor</h4>
+        <ul>
+            <li>Ganti Skin Badan Lokomotif</li>
+            <li>Ganti Skin Kepala Lokomotif</li>
+            <li>Ganti Skin Hidung Lokomotif</li>
+            <li>Ganti Skin Cowcatcher</li>
+        </ul>
+        <h4>Drive Mode</h4>
+        <ul>
+            <li>Indikator Bahan Bakar + Pasir (Dummy)</li>
+            <li>Hidup/Mati Mesin Lokomotif</li>
+            <li>Hidup/Mati Wiper</li>
+            <li>Hidup/Mati Radio</li>
+            <li>Hidup/Mati Lampu Kabin</li>
+            <li>Hidup/Mati Lampu Semboyan 20</li>
+            <li>Pasang/Lepas Eblek Semboyan 21</li>
+            <li>Dinas/Libur Masinis + Stoker</li>
+            <li>Dinas/Libur Lokride</li>
+            <li>Dinas/Langsir Juru Langsir</li>
+            <li>Dinas/Langsir Teknisi</li>
+            <li>ShortHood/LongHood Kursi</li>
+            <li>Pasang/Lepas Bendera</li>
+            <li>Pasang/Lepas Multiple Unit Divre</li>
+            <li>Pasang/Lepas Sekop</li>
+            <li>Pasang/Lepas Toolbox</li>
+            <li>Pasang/Lepas Papan Stopblok</li>
+            <li>Pasang/Lepas Teralis</li>
+        </ul>
+        <h4>Lainnya</h4>
+        <ul>
+             <li>Tidak ada</li>
+        </ul>
+        <h4>Catatan</h4>
+        <ul>
+            <li>Skin blur di TSA/TSPC, bisa reskin sendiri aja. </li>
+        </ul>
+        <br>
+        <a href="https://drive.google.com/file/d/1-2VTOnlr5uvsiwu55M6k29bjMh8xpPTs/view?usp=drivesdk">
+            <button>Download</button>
+        </a>
+        <br>
+        </section>
+        
+        <!-- CC 206 DRR EDIT DSP -->
+         <section>
+        <h2>DRR x DSP - CC 206 All In One</h2>
+
+        <img src="img/c6drrxdsp.png" alt="CC206 DRR x DSP" width="100%">
+
+        <p><b>MOHON UNTUK TIDAK REUPLOAD ADDON INI!</b></p>
+
+        <h4>Berikut fitur yang ada di addon ini</h4>
+        <h4>Surveyor</h4>
+        <ul>
+            <li>Ganti Skin Kepala Lokomotif</li>
+            <li>Ganti Skin Badan Lokomotif</li>
+            <li>Ganti Skin Cowcatcher</li>
+        </ul>
+        <h4>Drive Mode</h4>
+        <ul>
+            <li>Indikator Bahan Bakar + Pasir (Dummy)</li>
+            <li>Hidup/Mati Mesin Lokomotif</li>
+            <li>Buka/Tutup Pintu</li>
+            <li>Buka/Tutup Jendela</li>
+            <li>Buka/Tutup Kotak Multiple Unit</li>
+            <li>Hidup/Mati Wiper</li>
+            <li>Hidup/Mati Kipas Kabin</li>
+            <li>Hidup/Mati Lampu Kabin</li>
+            <li>Hidup/Mati Lampu Tangga</li>
+            <li>Hidup/Mati Lampu Kabut</li>
+            <li>Hidup/Mati Lampu Semboyan 20</li>
+            <li>Pasang/Lepas Eblek Semboyan 21</li>
+            <li>Dinas/Libur Masinis + Stoker</li>
+            <li>Dinas/Langsir Juru Langsir</li>
+            <li>Dinas/Langsir Teknisi</li>
+            <li>Dinas/Langsir Lokride</li>
+            <li>Pasang/Lepas Bendera</li>
+            <li>Pasang/Lepas AC</li>
+            <li>Pasang/Lepas Toolbox</li>
+            <li>Pasang/Lepas Teralis Semboyan Divre</li>
+            <li>Pasang/Lepas Bunga Peresmian</li>
+            <li>Pasang/Lepas Papan Jadwal</li>
+            <li>Pasang/Lepas Papan Stopblok</li>
+        </ul>
+        <h4>Lainnya</h4>
+        <ul>
+             <li>Tidak ada</li>
+        </ul>
+        <h4>Catatan</h4>
+        <ul>
+            <li>Terdapat bug dibagian kaca, pada saat masuk interior, warna kaca jadi gelap. Saat ini masih belum ditemukan cara mengatasinnya.</li>
+        </ul>
+        <br>
+        <a href="https://drive.google.com/file/d/10ZvcvzmXol6QKSV1nKXQgMQrmPIdwZ47/view">
+            <button>Download</button>
+        </a>
+        <br>
+        </section>
+        
+        <!-- CC 202 DRR EDIT DSP -->
+         <section>
+        <h2>DRR x DSP - CC 203 All In One</h2>
+
+        <img src="img/c3drrxdsp.png" alt="CC203 DRR x DSP" width="100%">
+
+        <p><b>MOHON UNTUK TIDAK REUPLOAD ADDON INI!</b></p>
+
+        <h4>Berikut fitur yang ada di addon ini</h4>
+        <h4>Surveyor</h4>
+        <ul>
+            <li>Maaf untuk fitur surveyor belom tersedia</li>
+        </ul>
+        <h4>Drive Mode</h4>
+        <ul>
+            <li>Ganti Skin Lokomotif</li>
+            <li>ShortHood/LongHood Kursi</li>
+            <li>Hidup/Mati Wiper</li>
+            <li>Dinas/Libur Masinis + Stoker</li>
+            <li>Dinas/Langsir Juru Langsir</li>
+            <li>Dinas/Langsir Teknisi</li>
+            <li>Dinas/Langsir Lokride</li>
+            <li>Pasang/Lepas Bendera</li>
+            <li>Pasang/Lepas AC Termorail/Orange/Lawas</li>
+            <li>Pasang/Lepas Toolbox</li>
+            <li>Pasang/Lepas Teralis Daop/Divre</li>
+            <li>Pasang/Lepas Atap Darurat</li>
+            <li>Pasang/Lepas Frame Jendela Besi</li>
+            <li>Pasang/Lepas Hanger</li>
+            <li>Pasang/Lepas Kotak Multiple Unit Daop/Divre</li>
+            <li>Pasang/Lepas Semboyan 21</li>
+            <li>Sambung/Idle Rantai</li>
+        </ul>
+        <h4>Lainnya</h4>
+        <ul>
+             <li>Tidak ada</li>
+        </ul>
+        <h4>Catatan</h4>
+        <ul>
+            <li>Maaf fiturnya masih sedikit, karena ini adalah loko editan pertama kami.</li>
+        </ul>
+        <br>
+        <a href="https://drive.google.com/file/d/1-_lJsD4FinVtpxyC929HJQsDOZYMLsrr/view">
+            <button>Download</button>
+        </a>
+        <br>
+        
+    </section>
+    
+    <footer><marquee>
+        <p>© 2026 Dyy Shafiqa Production</p>
+    </marquee></footer>
+
+</body>
+</html>

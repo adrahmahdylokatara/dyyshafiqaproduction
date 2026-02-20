@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<head>
+    <title>Addons Consist - Dyy Shafiqa Production</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+
+<div id="loader">
+    <div class="loader-box">
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <p id="progressText">0%</p>
+    </div>
+</div>
+
+
+<script>
+document.body.classList.add("loading");
+
+let progress = 0;
+const progressBar = document.getElementById("progressBar");
+const progressText = document.getElementById("progressText");
+const loader = document.getElementById("loader");
+
+const interval = setInterval(() => {
+    progress++;
+
+    progressBar.style.width = progress + "%";
+    progressText.textContent = progress + "%";
+
+    if (progress >= 100) {
+        clearInterval(interval);
+
+        setTimeout(() => {
+            loader.classList.add("hide");
+
+            setTimeout(() => {
+                loader.style.display = "none";
+                document.body.classList.remove("loading");
+            }, 500);
+
+        }, 300);
+    }
+}, 10);
+</script>
+
+    <header>
+
+  <img src="img/dsp.png" width="100x" height="65px" alt="Foto">
+  <div class="navigasi">Dyy Shafiqa Production</div>
+
+  <div class="header-right">
+    
+    <!-- Darkmode -->
+    <button id="darkModeToggle" class="dark-toggle">🌙</button>
+
+    <!-- Hamburger -->
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
+
+    <!-- Overlay -->
+  <div class="overlay" id="overlay"></div>
+
+  <!-- Sidebar -->
+  <nav class="sidebar" id="sidebar">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="contact.html">Contact</a></li>
+      <li><a href="locomotive.html">Locomotive</a></li>
+      <li><a href="consist.html">Consist</a></li>
+      <li><a href="rute.html">Rute</a></li>
+      <li><a href="object.html">Object</a></li>
+      <li><a href="spline.html">Spline</a></li>
+      <li><a href="interior.html">Interior</a></li>
+      <li><a href="hornsound.html">Hornsound</a></li>
+      <li><a href="enginesound.html">Enginesound</a></li>
+      <li><a href="enginespec.html">Enginespec</a></li>
+      <li><a href="depencies.html">Dependencies</a></li>
+    </ul>
+  </nav>
+
+</header>
+
+<!-- dark mode -->
+<script>
+const toggleBtn = document.getElementById("darkModeToggle");
+
+// Cek localStorage (biar ingat mode terakhir)
+if (localStorage.getItem("darkMode") === "enabled") {
+  document.body.classList.add("dark");
+  toggleBtn.textContent = "☀";
+}
+
+toggleBtn.addEventListener("click", () => {
+  document.body.classList.toggle("dark");
+
+  if (document.body.classList.contains("dark")) {
+    localStorage.setItem("darkMode", "enabled");
+    toggleBtn.textContent = "☀";
+  } else {
+    localStorage.setItem("darkMode", "disabled");
+    toggleBtn.textContent = "🌙";
+  }
+});
+</script>
+
+<!-- overlay -->
+<script>
+const menuToggle = document.getElementById("menuToggle");
+const sidebar = document.getElementById("sidebar");
+const overlay = document.getElementById("overlay");
+
+let timeout;
+
+menuToggle.addEventListener("mouseenter", () => {
+  clearTimeout(timeout);
+  sidebar.classList.add("active");
+  overlay.classList.add("active");
+});
+
+sidebar.addEventListener("mouseleave", () => {
+  timeout = setTimeout(() => {
+    sidebar.classList.remove("active");
+    overlay.classList.remove("active");
+  }, 200); // delay 200ms
+});
+</script>
+
+    <section>
+      
+         <!-- K3 NRDC EDIT DSP -->
+        <h3>Consist</h3>
+        <section>
+        <h2>NRDC x DSP - K3 AC Split Series</h2>
+
+        <img src="img/k3nrdcxdsp.png" alt="K3 NRDC x DSP" width="100%">
+
+        <p><b>MOHON UNTUK TIDAK REUPLOAD ADDON INI!</b></p>
+
+        <h4>Berikut fitur yang ada di addon ini</h4>
+        <h4>Surveyor</h4>
+        <ul>
+            <li>Ganti Skin Papan Nama KA</li>
+            <li>Ganti Skin Papan Nomor Urut KA</li>
+            <li>Ganti Skin Plat KA</li>
+            <li>Pasang/Lepas Papan Nama KA</li>
+            <li>Pasang/Lepas Papan Nomor Urut KA</li>
+        </ul>
+        <h4>Drive Mode</h4>
+        <ul>
+            <li>Buka/Tutup Pintu</li>
+            <li>Hidup/Mati Lampu Kabin</li>
+            <li>Hidup/Mati Lampu Semboyan 20</li>
+            <li>Pasang/Lepas Eblek Semboyan 21</li>
+            <li>Pasang/Lepas Rantai</li>
+            <li>Dinas/Libur Kru Gerbong</li>
+        </ul>
+        <h4>Lainnya</h4>
+        <ul>
+             <li>Tidak ada</li>
+        </ul>
+        <h4>Catatan</h4>
+        <ul>
+            <li>Terdapat bug pada nightmode.</li>
+        </ul>
+        <br>
+        <a href="https://drive.google.com/file/d/1-YfSZhLx5P7Uuq2nqPh3HesEMaVMs22L/view?usp=drive_link">
+            <button>Download</button>
+        </a>
+        <br>
+      
+    </section>
+    
+    </body>
+    </html>
